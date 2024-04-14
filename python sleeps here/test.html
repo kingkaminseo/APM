@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            border: 1px solid black;
+            margin-top: 10px;
+            
+        }
+        .menu > li {
+            display: inline-block;
+        }
+        .simpleul > li {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="mainli">
+            <a href="#" class="mainnav" data-category="맛집">맛집 찾기</a>
+        </li>
+        <li class="mainli">
+            <a href="#" class="mainnav" data-category="숙소">숙소 찾기</a>
+        </li>
+        <li class="mainli">
+            <a href="#" class="mainnav" data-category="관광명소">관광명소 찾기</a>
+        </li>
+    </ul>
+
+    <ul class="simpleul">
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '서울')">서울</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '대전')">대전</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '대구')">대구</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '광주')">광주</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '부산')">부산</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '울산')">울산(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '경기')">경기</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '강원')">강원</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '충북')">충북(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '충남')">충남(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '충북')">충청도</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '경북')">경북(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '경남')">경남(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '경남')">경상도</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '전북')">전북(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '전남')">전남(보류)</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '전남')">전라도</a></li>
+        <li><a href="#" onclick="event.preventDefault(); changeColor(event, '제주')">제주</a></li>
+    </ul>
+
+    <ul id="csvList"></ul>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.mainnav').click(function(e) {
+                e.preventDefault();
+                var category = $(this).data('category');
+                updateMenu(category);
+            });
+
+            $('.simpleul a').click(function(e) {
+                e.preventDefault();
+                var region = $(this).text().trim();
+                var category = $('.mainnav.active').data('category');
+                if (category) {
+                    loadCSV(category, region);
+                }
+            });
+        });
+
+        function updateMenu(category) {
+            $('.mainnav').removeClass('active');
+            $('.mainnav[data-category="' + category + '"]').addClass('active');
+        }
+
+        function loadCSV(category, region) {
+            var csvFilePath = category + region + ".csv";
+
+            $.ajax({
+                type: "GET",
+                url: csvFilePath,
+                dataType: "text",
+                success: function(data) {
+                    var csvRecords = data.split("\n");
+                    var list = $('#csvList');
+                    list.empty();
+
+                    for (var i = 0; i < csvRecords.length; i++) {
+                        var csvRecord = csvRecords[i].split(",");
+                        if (csvRecord.length >= 3) {
+                            var listItem = $('<li>').html("이름 : "+csvRecord[0] + "<br> 별점 : " + csvRecord[1] + "<br> 주소 : " + csvRecord[2]);
+                            list.append(listItem);
+                        }
+                    }
+                },
+                error: function() {
+                    console.log("Failed to load CSV file.");
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

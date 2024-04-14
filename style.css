@@ -1,0 +1,671 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+/* 스크롤바 전체에 대한 스타일 */
+.famous-placeTop::-webkit-scrollbar {
+    width: 10px; /* 스크롤바의 너비 조정 */
+}
+
+/* 스크롤바의 thumb(바 부분)에 대한 스타일 */
+.famous-placeTop::-webkit-scrollbar-thumb {
+    background-color: #999; /* 바의 색상 */
+    border-radius: 10px; /* 바의 모서리 반경 조정 */
+}
+
+/* 스크롤바의 track(바 타이머 부분)에 대한 스타일 */
+.famous-placeTop::-webkit-scrollbar-track {
+      border-radius: 10px;
+    background-color: #eee; /* 바 타이머 부분의 색상 */
+  }
+  
+  /* 스크롤바가 수평으로 표시될 때 */
+  ::-webkit-scrollbar:horizontal {
+    height: 17px; /* 스크롤바의 높이 조정 */
+  }
+  
+
+.all {
+    width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/*main opacity image*/
+.mainimg {
+    height: 20%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.mainimg>div {
+    overflow: hidden;
+}
+
+.mainimg>div>img:nth-child(1) {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    animation: fadeinout2 27s infinite;
+    animation-delay: 0s;
+    height: 600px;
+}
+
+.mainimg>div>img:nth-child(2) {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    animation: fadeinout2 27s infinite;
+    animation-delay: 9s;
+    height: 600px;
+}
+
+.mainimg>div>img:nth-child(3) {
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    animation: fadeinout2 27s infinite;
+    animation-delay: 18s;
+    height: 600px;
+    opacity: 0;
+
+}
+
+@keyframes fadeinout2 {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*main opacity image 끝*/
+
+/*main text deco*/
+.maintextdeco>h1:nth-child(1) {
+    font-size: 300%;
+    font-family: 'Calistoga', cursive;
+    position: absolute;
+    left: 1%;
+    top: 1%;
+}
+
+.maintextdeco>h1:nth-child(2) {
+    font-size: 559%;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.459);
+    color: white;
+    position: relative;
+    margin-top: 10%;
+    /* left: 30%; */
+    text-align: center;
+}
+
+.maintextdeco>p {
+    margin-top: 3%;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    color: white;
+    font-size: 150%;
+    font-family: 'Jua', sans-serif;
+    position: relative;
+    text-align: center;
+}
+
+.maintextdeco{
+    padding-bottom: 10%;
+    height: 100%;
+    padding-bottom: 5%;
+
+}
+
+/*main text deco 끝*/
+.mainpage {
+    background-color: white;
+    box-shadow: 0px -110px 1150px rgba(0, 0, 0, 0.436);
+    z-index: 1;
+    display: flex;  
+    flex-direction: column;
+}
+
+
+.page1 {
+    display: flex;
+}
+
+.pageleft {
+    flex: 8;
+    
+}
+
+.pageright {
+    flex: 2;
+}
+
+/*main menubar*/
+ul {
+    list-style: none;
+}
+.menu {
+    margin-top: 5%;
+    flex: 1;
+    margin-bottom: 1%;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.menufirst {
+    margin-top: 5%;
+    flex: 1;
+    margin-bottom: 1%;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.menufirst>li>a {
+    color: black;
+    display: block;
+    padding: 0 20px;
+    height: 40%;
+    line-height: 40px;
+}
+
+
+
+.menufirst>li {
+    position: relative;
+    float: left;
+    margin-top: 1%;
+    margin-left: 5%;
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+a {
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+
+
+.mainli>a:hover {
+    border-radius: 20px;
+    /* animation: hover 0.4s ease-in-out; */
+    background-color: rgba(200, 200, 200, 0.264);
+    transition: .2s;
+    transform: scale(1.1);
+}
+
+.menu>li {
+    position: relative;
+    float: left;
+    margin-top: 1%;
+    margin-left: 5%;
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.menu>li:nth-child(5) {
+    margin-right: 14%;
+}
+
+.menu>li>a {
+    color: black;
+    display: block;
+    padding: 0 20px;
+    height: 40%;
+    line-height: 40px;
+}
+
+
+.mainnav {
+    font-size: 130%;
+}
+
+
+/*main menubar 끝*/
+
+/*headline*/
+.headline {
+    text-align: center;
+    margin-top: 6%;
+    font-family: 'Do Hyeon', sans-serif;
+    overflow: hidden;
+    padding-bottom: -400px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+.headlineslidediv > p:nth-child(1) {
+    text-align: center;
+    font-size: 40PX;
+    letter-spacing: 5px;
+    margin-right: -400px;
+}
+.headlineslidediv > p:nth-child(2) {
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 1000;
+    font-size: 40PX;
+    letter-spacing: 1px;
+    margin-right: -170px;
+    color: rgb(84, 84, 84);
+}
+
+.headlineslidediv > p:nth-child(3) {
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 1000;
+    font-size: 40PX;
+    letter-spacing: 2px;
+    margin-right: 150px;
+    color: rgb(178, 178, 178);
+}
+
+.headlineslidediv {
+    position: relative;
+    animation: slideleft 20s linear infinite;
+}
+
+.headlineslidediv2 {
+    position: relative;
+    bottom: 170px;
+    animation: slideleft 20s linear infinite;
+    animation-delay: 11s;
+    opacity: 0;
+}
+
+.headlineslidediv2 > p:nth-child(1) {
+    text-align: center;
+    font-size: 40PX;
+    letter-spacing: 5px;
+    margin-right: -400px;
+}
+
+.headlineslidediv2 > p:nth-child(2) {
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 1000;
+    font-size: 40PX;
+    letter-spacing: 1px;
+    margin-right: -170px;
+    color: rgb(84, 84, 84);
+}
+
+.headlineslidediv2 > p:nth-child(3) {
+    text-align: center;
+    font-family: 'Do Hyeon', sans-serif;
+    font-weight: 1000;
+    font-size: 40PX;
+    letter-spacing: 2px;
+    margin-right: 150px;
+    color: rgb(178, 178, 178);
+}
+
+
+@keyframes slideleft {
+    0% {left: 1325px;  opacity: 1;}
+    100% {left: -1425px;   opacity: 1;}
+}
+/*headline 끝*/
+
+/*famous 슬라이드*/
+.famous-placeTop {
+    margin-top: 10%;
+    padding-top: 1%;
+    position: relative;
+    padding-bottom: 25%;
+    overflow-x: auto;
+    margin-right: 1%;
+    margin-left: 1%;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+.insideidv {
+    position: absolute;
+    width: 1950px;
+}
+
+
+.famous-placeTop>div>ul>li {
+    scrollbar-color: #fff;
+    display: inline-block;
+    padding-right: 28px;
+
+}
+
+
+.famousmaindiv {
+    width: 350px;
+    height: 300px;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.382);
+}
+
+.famous-content {
+    color: black;
+}
+
+.famousmaindiv>div:nth-child(1) {
+    flex: 3;
+}
+
+.famousmaindiv>div:nth-child(2) {
+    line-height: 70px;
+    background-color: darkgray;
+    flex: 1;
+    border-top: solid 2px black;
+}
+
+.pageleft>h1 {
+    text-align: center;
+    position: relative;
+    top: 1%;
+}
+
+/*famous 슬라이드*/
+
+/*추천 메뉴바*/
+.simple {
+    margin-left: 1.5%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 6%;
+}
+
+.simpleul {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    flex: 1;
+    width: 85%;
+}
+
+.simpleul>li {
+    display: inline;
+    padding-right: 9px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.simpleul>li>a {
+    color: rgb(20, 20, 20);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 10px;
+}
+
+
+
+.simpleul>li>a:hover {
+    background-color: rgba(200, 200, 200, 0.264);
+    color: black;
+    transition: .2s;
+    transform: scale(1.1);
+}
+
+.simpleul .selected {
+    color: white;
+    background-color: black;
+    transform: scale(1.5);
+}
+
+.menu .selected {
+    color: white;
+    background-color: black;
+}
+
+.menu .active {
+    background-color: black;
+    color: white;
+}
+/******************ad**************/
+
+
+
+.flip {
+    width: 100%;
+    height: 130px;
+    position: relative; 
+    perspective: 1100px;
+    margin-top: 100px;
+  }
+  
+  .card {
+    width: 100%;
+    height: 590px;
+    position: relative;
+    transition: .4s;
+    transform-style: preserve-3d;
+  } 
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    color: #fff;
+  }
+  
+  .back{ 
+    transform: rotateY(180deg);
+  }
+  
+  .flip:active > .card {
+    transform: rotateY(180deg);
+  }
+  
+.back {
+    background-color: rgb(71, 71, 71);
+    border-radius: 10px;
+}
+
+.back > div > h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 1%;
+    font-family: 'Jua', sans-serif;
+    font-weight: 1;
+}
+
+.backplaylist > img {
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-top: 0px;
+}
+
+  /******************ad**************/
+  
+  .banneradvertisement {
+    /*background-color: #0035a7b7;*/
+    background-color: gray;
+    color: white;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.432);
+    border-radius: 10px;
+  }
+  
+  .main-ad-banner {
+    text-align: center;
+  }
+  
+  .main-ad-banner>img {
+    text-align: center;
+  }
+  
+  .ad-logo {
+    display: flex;
+  }
+  
+  .ad-logo>img {
+    margin: 1%;
+    flex: 1;
+    border-radius: 10px;
+    width: 2px;
+  }
+  
+  .ad-logo>h2 {
+    flex: 9;
+    margin-top: 2%;
+  
+  }
+  
+  .ad-footer {
+    margin-left: 30px;
+    margin-top: 20px;
+    line-height: 48px;
+  }
+  
+  .ad-footer>h1 {
+    margin-left: 8px;
+    margin-top: 20px;
+    line-height: 48px;
+    font-family: 'Jua', sans-serif;
+    letter-spacing: 5px;
+    font-weight: 1;
+  }
+  
+  .ad-playbtn {
+    margin-top: 20px;
+    background-color: rgb(246, 246, 246);
+    color: rgb(94, 118, 255);
+    margin-right: 50px;
+    border-radius: 20px;
+    text-align: center;
+    padding-left: -50px;
+    font-size: 20px;
+    font-family: 'Do Hyeon', sans-serif;
+  }
+  
+  .flip {
+  
+  }
+
+  .flip.sticky {
+    position: fixed;
+    top:10px; 
+    /* left: 1382px; */
+    /* 원하는 위치로 조정하세요 */
+    z-index: 1;
+    width: 20%;
+    height: 830px;
+  }
+  
+  /******************ad**************/
+
+.how {
+    width: 100%;
+    height: 600px;
+}
+
+
+#postiticon {
+    position: fixed;
+    bottom: 80px;
+    right: 100px;
+    z-index: 2;
+}
+
+#postiticon > img {
+    width: 100px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#postit {
+    width: 300px;
+    position: fixed;
+    bottom: 200px;
+    right: 150px;
+    z-index: 2;
+    
+}
+
+#postit-text {
+    position: fixed;
+    bottom: 220px;
+    right: 165px;
+    z-index: 2;
+}
+
+textarea {
+    font-size: 15px;
+    font-family: 'Sunflower', sans-serif;
+    resize: none;
+    border: none;
+    outline: none;
+    word-spacing: 5px;
+    letter-spacing: 0.5px;
+}
+
+
+textarea::selection {
+    background-color: #ffb3b78b; /* 원하는 색상으로 변경 */
+    color: black; /* 원하는 텍스트 색상으로 변경 */
+    font-weight: bold;
+}
+
+
+/*111111111111111111111footer footer*/
+#footermaintext {
+    font-size: 90px;
+    position: relative;
+    bottom: 62px;
+    left: 150px;
+}
+
+.split-text {
+    background: linear-gradient(to bottom, rgb(19, 19, 19) 50%, white 50%);
+    display: inline;
+    -webkit-background-clip: text; /* 텍스트를 배경에 맞게 잘라내는 속성 */
+    color: transparent; /* 텍스트 자체는 투명하게 설정 */
+    font-weight: bolder;
+    word-spacing: 15px;
+}
+
+.footerbtn {
+    position: absolute;
+    right: 600px;
+    z-index: 1;
+    background-color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bolder;
+}
